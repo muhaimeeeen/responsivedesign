@@ -279,7 +279,9 @@ header h2{
 
 /* NOTE: Under this following approach, styles can also be combined within a single view size; in this instance, display .header_mobile and its contents when max-width < 37.5em (600px) */
 
-@media only screen and (max-width: 37.5em), only screen and (max-width: 48em){
+/* In this example, for header, more than one breakpoint applies to switch to a mobile view : 37.5em (600px) and 48em (768px) */
+
+@media only screen and (max-width: 37.5em), (max-width: 48em){
 
 	/* extend the picture to take up the entire view port */
 	.header-picture{
@@ -310,9 +312,12 @@ header h2{
 
 /* :::: END OF HEADER :::: */
 
+
 /* :::: START OF FOOTER :::: */
 
-/* :::: DESKTOP SECTION :::: */
+/* --- DESKTOP SECTION --- */
+
+/* extend the footer take up the entire view port */
 .footer{
 	display:flex;
 	font-size: 1.2rem;
@@ -348,8 +353,7 @@ header h2{
 	text-decoration: underline;
 }
 
-
-/* :::: MOBILE SECTION :::: */
+/* --- MOBILE SECTION --- */
 
 @media only screen and (max-width: 37.5em){
 	.footer-list{
@@ -357,123 +361,147 @@ header h2{
 	}
 }
 
-
-
-
 /* :::: END OF FOOTER :::: */
 
 
 /* :::: START OF PRACTICE :::: */
 
-/* :::: DESKTOP SECTION :::: */
+/* --- DESKTOP SECTION --- */
+
+/* set background color and padding for practice section */
 .practice{
-	background-color:#f0f0f0 ;
-	padding: 2rem 1.5rem;
+	background-color: #f0f0f0;
+	padding: 2rem 1.5rem; /* top & bottom, left & right */
 }
 
+/* set the size of each image in class practice */
 .practice img{
-	width: 100;
+	width: 100%;
 }
 
+/* set <h3> used in .practice class */
 .practice h3{
 	font-size: 2.4rem;
 	font-weight: 700;
-	padding: 2rem 0rem;
+	padding: 2rem 0rem; /* top & bottom, left & right */
 }
 
+/* set font-size and margin-bottom for .practice-text class */
 .practice-text{
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
+	font-size: 1.2rem;
+	margin-bottom: 2rem;
 }
 
+/* set font-size and padding for .practice-name class */
 .practice-name{
-    font-size: 1rem;
+	font-size: 1rem;
+	padding: 2rem 0rem; /* top & bottom, left & right */
 }
 
+/* set the style for .info class - a grid of 3 rows occupying 1 fractional unit applies */
 .info{
-	background-color:#f0f0f0 ;
-    border-left: 1px solid #e7e7e7;
-	display:grid;
-	grid-template-rows: repeat(3, 1fr);
-	row-gap: 3px;
-	margin-top: 2rem;
-}
-
-.info-block{
-	padding-left: 1em;
+	background-color: #f9f7f6;
+	border-left: 1px solid #e7e7e7;
 	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-row-gap: 3px;
+}
+
+/* set the style for .info-block class - a grid of 2 columns apply */
+.info-block{
+	display:grid;
 	grid-template-columns: 0.4fr 0.6fr;
-	column-gap: 5%;
-	border-bottom: 1px solid #e7e7ef;
-	border-top: 1px solid #e7e7ef;
+	grid-column-gap: 5%;
+	align-items: center;
+	border-bottom: 1px solid #e7e7e7;
+	padding: 2rem 0rem 2rem 2rem; /* top, right, bottom, left*/
 }
-
+/* set <img> used in .info-block class  */
 .info-block img{
-	width: 100;
-	padding: 1em 0em;
+	width: 100%;
+	height: auto;
 }
 
-.info-block h4{
+/* set a padding for info */
+.info-block-content{
+	padding: 1rem;
+}
+
+/* set <h4> used in .info-block-content class */
+.info-block-content h4{
 	color: #303646;
-	font-size: 1.6rem;
-	font-weight: 700;
+	font-size: 2.4rem;
+	font-weight: 400;
 }
 
-.info-block p{
-	font-size: 1.3rem;
+/* set <p> used in .info-block-content class */
+.info-block-content p{
+	font-size: 1.5rem;
 	margin-bottom: 1rem;
 }
 
+/* set the last child of info-block with a different color: #e7e7e7 */
 .info-block:last-child{
-	background-color: #d7d7d7;
+	background-color:#e7e7e7;
 }
 
-.btn-small:link .btn-small:visited{
-    font-size: 1.2rem;
-	font-weight: normal;
+/* Set the color of "Read more" links within .info-block */
+.btn-small:link,.btn-small:visited{
+	font-size: 1.5rem;
+	font-weight: 400;
 	color: #30A9DE;
+	border-bottom: 1px solid transparent;
 }
 
-.btn-small:hover .btn-small:active{
-    text-decoration: underline;
-} 
+/* set the hover and active pseudo classes for btn-small class (to underline the link) */
+.btn-small:hover, .btn-small:active{
+	text-decoration: underline;
+}
 
-/* by default, info-mobile should be hidden */
+/* .info-mobile is hidden by default, until the view breakpoint changes to a mobile view */
 .info-mobile{
 	display: none;
 }
 
 
+/* --- MOBILE SECTION */
 
-
-
-/* :::: MOBILE SECTION :::: */
+/* In this example, for practice section, more than one breakpoint applies to switch to a mobile view : 37.5em (600px) and 48em (768px) */
 
 @media only screen and (max-width: 37.5em), (max-width: 48em){
+
+	/* hide .practice when breakpoint arrives mobile view */
 	.practice{
-		display: none;
+		display:none
 	}
 
+	/* hide .info when breakpoint arrives at mobile view */
 	.info{
 		display: none;
 	}
 
+	/* dislay .info-mobile in mobile view as a grid with grid-column taking up the entire width (full--start to full-end) */
 	.info-mobile{
 		display: grid;
-		grid-column: full--start / full--end;
+		grid-column:full--start / full--end;
 	}
 
+	/* display .infoblock in mobile view as a single column (1fr) with a padding of 1.6rem */
 	.info-block{
 		grid-template-columns: 1fr;
+		padding: 1.6rem;
+	}
+
+	/* set a padding of 2rem per .info-block-content */
+	.info-block-content{
 		padding: 2rem;
 	}
 
+	/*remove the background from the last .info-block */
 	.info-block:last-child{
 		background-color: transparent;
 	}
-
+	
 }
-
-
 
 /* :::: END OF PRACTICE :::: */
