@@ -438,7 +438,7 @@ header h2{
     text-decoration: underline;
 } 
 
-/* by defaukt, info-mobile should be hidden */
+/* by default, info-mobile should be hidden */
 .info-mobile{
 	display: none;
 }
