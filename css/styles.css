@@ -505,3 +505,54 @@ header h2{
 }
 
 /* :::: END OF PRACTICE :::: */
+
+
+/* :::: START OF LEARNING :::: */
+
+
+.learning h1 {
+    text-align: center;
+	font-size: 2.4rem;
+    padding: 32px 0 24px;
+	color: rgb(70, 70, 70);
+	font-family: Tahoma, sans-serif;
+}
+
+.learning{
+	grid-column: full--start / full--end;
+	background-color: rgb(226, 226, 226);
+	margin: 0;
+
+}
+
+.courses{
+	display: grid;
+	grid-column: full--start / full--end;
+    grid-template-columns: repeat(3,1fr);
+	gap: 32px;
+	
+}
+
+.learning-cards{
+	font-size: small;
+	background-color: #ffffff;
+	padding-bottom: 24px;
+}
+
+
+
+
+/* --- DESKTOP SECTION --- */
+
+/* --- MOBILE SECTION --- */
+
+/* :::: END OF LEARNING :::: */
+
+
+
+
+
+
+
+
+
