@@ -88,6 +88,7 @@ For context, refer to the diagram namedgridlines.jpg:
 	display: grid;
 	grid-template-columns: [full--start] 0.6fr [center--end center--start] 0.4fr [full--end];
 	grid-template-rows: repeat(6, min-content)
+	
 }
 
 /* when the viewport width is <1200px (75em), set the containers's max-width to 100% (100vw) */
@@ -510,16 +511,19 @@ header h2{
 /* :::: START OF LEARNING :::: */
 
 /* --- DESKTOP SECTION --- */
+
 .learning h1 {
     text-align: center;
 	font-size: 2.4rem;
     padding: 32px 0 24px;
 	color: rgb(70, 70, 70);
+
 }
 
 .learning{
 	grid-column: full--start / full--end;
 	background-color: rgb(226, 226, 226);
+
 }
 
 .courses{
@@ -530,29 +534,171 @@ header h2{
 	padding: 0 48px 32px;
 	flex-wrap: wrap;
 	justify-content: center;
+
 }
 
 .learning-cards{
 	font-size: small;
 	background-color: #ffffff;
-	padding: 16px 16px 24px;
+}
+
+.learning-cards h3, .learning-cards h4{
+	padding: 1rem;
 }
 
 .learning-cards img{
 	width: 100%;
 }
 
+/* .learning-mobile is hidden by default, until the view breakpoint changes to a mobile view */
 
-
+.learning-mobile{
+	display: none;
+}
 /* --- MOBILE SECTION --- */
+
+@media only screen and (max-width: 37.5em), (max-width: 48em){
+
+	/* hide .learning when breakpoint arrives mobile view */
+	.learning{
+		display:none
+	}
+
+	/* dislay .info-mobile in mobile view as a grid with grid-column taking up the entire width (full--start to full-end) */
+	.learning-mobile {
+	display: grid;
+	grid-column: full--start / full--end;
+	font-size: 2em;
+	}
+    
+	.learning-mobile h1{
+		text-align: center;
+		padding: 1em;
+	}
+
+	.learning-mobile li{
+		padding: 1em;
+		background-color: #d7d7d7;
+		margin: 1rem;
+		list-style: none;
+	}
+
+
+
+
+	
+}
 
 /* :::: END OF LEARNING :::: */
 
 /* :::: START OF THESIS :::: */
-
 /* --- DESKTOP SECTION --- */
 
+
+.thesis h1{
+	text-align: center;
+	font-size: 2.4rem;
+    padding: 32px 0 24px;
+	color: rgb(70, 70, 70);
+}
+
+.thesis{
+	grid-column: full--start / full--end;
+}
+
+.left-thesis{
+	padding: 1em;
+}
+
+.left-thesis h2, .left-thesis h3{
+	padding-top: 1em;
+}
+
+.left-thesis h3{
+	padding-bottom: 2em;
+}
+
+.right-thesis{
+	padding: 1em;
+}
+
+.info-block-thesis{
+	padding: 1em;
+}
+
+
+.thesis-container{
+    display: grid;
+	grid-column: full--start / full--end;
+	grid-template-columns: 60% 40%;
+}
+
+.info-block-thesis{
+	display: grid;
+	grid-column: full--start / full--end;
+	grid-template-columns: 35% 65%;
+	align-items: center;
+}
+
+
+
+#video-info{
+	width: 100%;
+}
+
+.info-block-thesis-img{
+	width: 100%;
+	padding: 1rem, 0rem;
+}
+
+.info-block-thesis-content h4{
+    font-size: 2rem;
+	font-weight: 700;
+}
+
+.info-block-thesis-content p{
+    font-size: 2rem;
+	font-weight: 400;
+}
+
+.info-block-thesis-content{
+	padding-left: 2em;
+}
+
+.info-block-thesis:first-child{
+    background-color: #d7d7d7;
+}
+
+.thesis-mobile{
+	display: none;
+}
+
 /* --- MOBILE SECTION --- */
+
+@media only screen and (max-width: 37.5em), (max-width: 48em){
+	.thesis{
+		display: none;
+	}
+
+	.thesis-mobile{
+		display: grid;
+		grid-column: full--start / full--end;
+		font-size: 2.5rem;
+		padding: 2rem 0;
+	}
+	
+	.thesis-mobile video{
+		width: 100%;
+	}
+	
+	.thesis-mobile h1{
+		text-align: center;
+		margin: 2rem;
+	}
+
+}
+
+
 
 /* :::: END OF THESIS :::: */
 
